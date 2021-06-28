@@ -1,4 +1,7 @@
 {
+  "jshintConfig": {
+    "esversion": 6
+  },
   "name": "devdacticWebsite",
   "version": "0.0.1",
   "author": "Simon Grimm",
@@ -22,6 +25,7 @@
     "@capacitor/core": "2.4.7",
     "@capacitor/ios": "^2.4.7",
     "@ionic/angular": "^5.5.2",
+    "@ionic/lab": "^3.2.10",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -38,6 +42,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "cypress": "^7.6.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.2.0",
