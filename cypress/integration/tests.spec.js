@@ -17,23 +17,46 @@
 //     });
 // });
 
+// describe('Web App Testing', () => {
+ 
+//     it('marks the active page', () => {
+//         cy.visit('/');
+//         cy.get('.header ion-button').should('have.length', '4');
+//         cy.get('.header ion-button').eq(0).should('have.class', 'active-item');
+ 
+//         cy.visit('/products');
+//         cy.get('.header ion-button').eq(1).should('have.class', 'active-item');
+ 
+//         cy.visit('/about');
+//         cy.get('.header ion-button').eq(2).should('have.class', 'active-item');
+//     });
+ 
+//     it('has a blue border when active', () => {
+//         cy.visit('/');
+//         cy.get('.header ion-button').eq(0).should('have.css', 'border-bottom', '2px solid rgb(56, 128, 255)');
+//     });
+ 
+// });
+
 describe('Web App Testing', () => {
  
-    it('marks the active page', () => {
+    it('shows a menu on small screens', () => {
         cy.visit('/');
-        cy.get('.header ion-button').should('have.length', '4');
-        cy.get('.header ion-button').eq(0).should('have.class', 'active-item');
- 
-        cy.visit('/products');
-        cy.get('.header ion-button').eq(1).should('have.class', 'active-item');
- 
-        cy.visit('/about');
-        cy.get('.header ion-button').eq(2).should('have.class', 'active-item');
+        cy.get('ion-menu-button').should('be.not.visible');
+        cy.viewport('iphone-x');
+        cy.wait(200);
+        cy.get('ion-menu-button').should('be.visible');
     });
  
-    it('has a blue border when active', () => {
+    it('shows a menu on small screens', () => {
         cy.visit('/');
-        cy.get('.header ion-button').eq(0).should('have.css', 'border-bottom', '2px solid rgb(56, 128, 255)');
+        cy.get('.mobile-header').should('be.not.visible');
+        cy.get('.header').should('be.visible');
+ 
+        cy.viewport('iphone-x');
+        cy.wait(200);
+        cy.get('.mobile-header').should('be.visible');
+        cy.get('.header').should('be.not.visible');
     });
  
 });
